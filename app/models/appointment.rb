@@ -13,4 +13,7 @@
 
 class Appointment < ActiveRecord::Base
   composed_of :timeslot, mapping: [["start_time", "start_time"], ["end_time", "end_time"]]
+
+  validates :description, presence: true
+  validates :timeslot, timeslot: true
 end
